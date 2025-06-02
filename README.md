@@ -66,6 +66,8 @@ Permite a los administradores gestionar los pedidos realizados por los usuarios.
 - **Completar Pedido**: Marca un pedido como completado.
 - **Eliminar Pedido**: Elimina un pedido seleccionado.
 
+---
+
 ### **4. Gestión de Usuarios**
 
 #### **Descripción**
