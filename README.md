@@ -42,16 +42,6 @@ Permite a los administradores gestionar los productos del catálogo. Incluye:
 #### **Datos Destacados**
 - **Productos Más Vendidos**: Una lista y tarjeta que destacan los productos con mayor número de ventas.
 
-#### **Ejemplo de Código**
-```jsx
-<button
-  onClick={() => setMostrarModalAgregar(true)}
-  className="bg-green-500 text-white px-4 py-2 rounded-md"
->
-  Agregar Producto
-</button>
----
-
 ### **3. Gestión de Pedidos**
 
 #### **Descripción**
