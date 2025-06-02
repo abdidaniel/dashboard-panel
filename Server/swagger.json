@@ -1,0 +1,167 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dashboard API",
+    "version": "1.0.0",
+    "description": "Documentación de la API para el dashboard de e-commerce"
+  },
+  "servers": [
+    { "url": "http://localhost:5000/api" }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "Iniciar sesión",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "required": ["email", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login exitoso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": { "type": "string" },
+                    "user": { "$ref": "#/components/schemas/User" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Credenciales incorrectas"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Obtener todos los usuarios (admin)",
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": {
+            "description": "Lista de usuarios",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/User" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Registrar usuario",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserRegister" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Usuario creado" }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Obtener todos los productos",
+        "responses": {
+          "200": {
+            "description": "Lista de productos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Product" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear producto (admin)",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Product" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Producto creado" }
+        }
+      }
+    }
+
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": {
+            "type": "object",
+            "properties": {
+              "firstname": { "type": "string" },
+              "lastname": { "type": "string" }
+            }
+          },
+          "email": { "type": "string" }
+        }
+      },
+      "UserRegister": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "properties": {
+              "firstname": { "type": "string" },
+              "lastname": { "type": "string" }
+            }
+          },
+          "email": { "type": "string" },
+          "password": { "type": "string" }
+        }
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "price": { "type": "number" },
+          "category": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

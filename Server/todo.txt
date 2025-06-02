@@ -1,0 +1,9 @@
+falta por hacer:
+1. Endpoints de categorías. [1]
+2.Endpoints de estdística. [1]
+3.Validaciones de seguridad.[1]
+4.Documentación.[0]
+5.Testing.[0]
+
+frontend:
+
