@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function testUpdateProduct() {
   try {
-    const productId = '683b9dd07a1837853e8e3211';
+    const productId = '683b9dd07a1837853e8e3210';
     const response = await axios.put(
       `http://localhost:5000/api/products/${productId}`,
       {

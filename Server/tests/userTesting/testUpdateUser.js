@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function testUpdateUser() {
   try {
-    const userId = '683ba40e58cb411f6ebc67a9';
+    const userId = '683ba40e58cb411f6ebc6752';
     const response = await axios.put(
       `http://localhost:5000/api/users/${userId}`,
       {

@@ -2,12 +2,12 @@ const axios = require('axios');
 
 async function testDeleteCart() {
   try {
-    const cartId = '<CART_ID_AQUI>';
+    const cartId = '683d07560397a5a6ba225169';
     const response = await axios.delete(
       `http://localhost:5000/api/carts/${cartId}`,
       {
         headers: {
-          Authorization: 'Bearer <TOKEN_ADMIN_AQUI>'
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4M2JhMDdmNDBkNjMzYmUxYTc1YzM5ZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODgyOTU0NSwiZXhwIjoxNzQ4OTE1OTQ1fQ.zZJ6nL8dSC0u6zyj7-hHQbwao3bYTJfpAN70JJDPBFI'
         }
       }
     );

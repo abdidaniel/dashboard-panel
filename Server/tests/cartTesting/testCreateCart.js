@@ -5,15 +5,15 @@ async function testCreateCart() {
     const response = await axios.post(
       'http://localhost:5000/api/carts',
       {
-        userId: '<USER_ID_AQUI>',
+        userId: '683ba07f40d633be1a75c39e',
         products: [
-          { productId: '<PRODUCT_ID_AQUI>', quantity: 2 }
+          { productId: '683b9dd07a1837853e8e3209', quantity: 2 }
         ],
         date: new Date()
       },
       {
         headers: {
-          Authorization: 'Bearer <TOKEN_USER_AQUI>'
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4M2JhMDdmNDBkNjMzYmUxYTc1YzM5ZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODgyOTU0NSwiZXhwIjoxNzQ4OTE1OTQ1fQ.zZJ6nL8dSC0u6zyj7-hHQbwao3bYTJfpAN70JJDPBFI'
         }
       }
     );

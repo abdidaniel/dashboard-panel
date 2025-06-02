@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function testDeleteProduct() {
   try {
-    const productId = '683b9dd07a1837853e8e320b';
+    const productId = '683d0bb9c61ee9df7f5f9125';
     const response = await axios.delete(
       `http://localhost:5000/api/products/${productId}`,
       {

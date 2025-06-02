@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function testDeleteUser() {
   try {
-    const userId = '683ba40e58cb411f6ebc67a9';
+    const userId = '683ba40e58cb411f6ebc674a';
     const response = await axios.delete(
       `http://localhost:5000/api/users/${userId}`,
       {
